@@ -818,9 +818,10 @@ pub unsafe extern "C" fn PFSVGSceneCreateWithMemory(bytes: *const c_char, byte_l
 pub unsafe extern "C" fn PFSVGSceneCreateWithPath(path: *const c_char) -> PFSVGSceneRef {
     let string = to_rust_string(&path, 0);
     let path = PathBuf::from(string);
-    let tree = match Tree::from_file(path, &Options::default()) {
-        Ok(tree) => tree,
-        Err(_) => return ptr::null_mut(),
+    let input_data = std::fs::read(path);
+    let tree = match input_data.map(|data| Tree::from_data(&data, &Options::default())) {
+        Ok(Ok(tree)) => tree,
+        _ => return ptr::null_mut(),
     };
     let svg_scene = SVGScene::from_tree(&tree);
     Box::into_raw(Box::new(svg_scene))

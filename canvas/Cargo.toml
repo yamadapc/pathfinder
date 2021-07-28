@@ -13,7 +13,7 @@ keywords = ["pathfinder", "canvas", "vector", "graphics", "gpu"]
 crate-type = ["rlib", "staticlib"]
 
 [dependencies]
-font-kit = { version = "0.6", optional = true }
+font-kit = { version = "^0.10", optional = true }
 
 [dependencies.pathfinder_color]
 path = "../color"
@@ -37,8 +37,9 @@ version = "0.5"
 optional = true
 
 [dependencies.skribo]
-version = "0.1"
+version = "0.2"
 optional = true
+path = "../../skribo"
 
 [features]
 pf-text = ["pathfinder_text", "skribo", "font-kit"]

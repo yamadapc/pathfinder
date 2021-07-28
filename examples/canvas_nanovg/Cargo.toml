@@ -6,7 +6,7 @@ edition = "2018"
 
 [dependencies]
 arrayvec = "0.5"
-font-kit = "0.6"
+font-kit = "^0.10"
 gl = "0.14"
 
 [dependencies.euclid]

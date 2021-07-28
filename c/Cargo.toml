@@ -9,11 +9,11 @@ crate-type = ["staticlib"]
 name = "pathfinder"
 
 [dependencies]
-font-kit = "0.6"
+font-kit = "^0.10"
 foreign-types = "0.3"
 gl = "0.14"
 libc = "0.2"
-usvg = "0.9"
+usvg = "0.15"
 
 [dependencies.pathfinder_canvas]
 features = ["pf-text"]

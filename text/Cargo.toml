@@ -9,7 +9,7 @@ repository = "https://github.com/servo/pathfinder"
 homepage = "https://github.com/servo/pathfinder"
 
 [dependencies]
-font-kit = "0.6"
+font-kit = "^0.10"
 
 [dependencies.pathfinder_content]
 path = "../content"
@@ -24,4 +24,5 @@ path = "../renderer"
 version = "0.5"
 
 [dependencies.skribo]
-version = "0.1"
+version = "^0.2"
+path = "../../skribo"
